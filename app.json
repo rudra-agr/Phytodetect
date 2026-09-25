@@ -1,0 +1,52 @@
+{
+  "expo": {
+    "name": "PhytoDetect",
+    "slug": "phytodetect",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "phytodetect",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.phytodetect.app",
+      "permissions": ["CAMERA", "READ_EXTERNAL_STORAGE", "READ_MEDIA_IMAGES"]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "PhytoDetect needs access to your photos so you can select a crop leaf image for disease detection.",
+          "cameraPermission": "PhytoDetect needs access to your camera so you can capture a crop leaf image for disease detection."
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "PhytoDetect needs access to your camera so you can capture a crop leaf image for disease detection.",
+          "microphonePermission": false,
+          "recordAudioAndroid": false
+        }
+      ]
+    ],
+    "extra": {
+      "router": {
+        "origin": false
+      }
+    }
+  }
+}
